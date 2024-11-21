@@ -1,0 +1,16 @@
+<app-header/>
+
+<main>
+  <div id="dashboard">
+    <app-dashboard-item [image]="{location:'status.png',alternate:'A status'}" title="status">
+      <app-server-status />
+    </app-dashboard-item>
+    <app-dashboard-item [image]="{location:'globe.png',alternate:'A globe'}" title="traffic">
+      <app-traffic/>
+    </app-dashboard-item>
+
+    <app-dashboard-item [image]="{location:'list.png',alternate:'A ticket'}" title="ticket">
+      <app-ticket/>
+    </app-dashboard-item>
+  </div>
+</main>

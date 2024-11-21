@@ -1,0 +1,23 @@
+@if (onAddingTask){
+    <app-new-task (close)="onCancleAddTask()" userId="userId"/>
+}
+<app-card>
+<section id="tasks">
+    <header>
+        <h2>{{name}}'s Task</h2>
+        <menu>
+            <button (click)="onAddtask()" >Add task</button>
+        </menu>
+    </header>
+    <ul>
+        @for(task of userRelatedtask; track $index) {
+            <li>
+                <app-task [task]="task"/>
+            </li> 
+        }
+     
+    </ul>
+</section>
+</app-card>
+
+

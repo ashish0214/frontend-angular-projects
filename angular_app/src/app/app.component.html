@@ -1,0 +1,44 @@
+<app-header />
+<main>
+  <ul>
+    @for(user of users;track user.id){
+      <li>
+        <app-user [user]="user" [selected]="user.id=== selectedUserId"
+        (select)="onSelecteduser($event)"/>
+      </li>
+    }
+  </ul>
+  @if(selectedUserName){
+    <app-tasks [userId]="selectedUserName.id" [name]="selectedUserName.name"/>
+  }
+  @else {
+    <h2>
+    Select the user to see users task
+    </h2>
+  }
+  
+</main>
+
+
+
+
+
+
+
+
+
+<!--  older way of using for loop 
+<li **ngFor="let user of user">
+  <app-user [user]="user" 
+        (select)="onSelecteduser($event)"/>
+</li>
+-->
+
+<!-- older way of using if condition
+<app-task *ngIf="selectedUserName"  [name]="selectedUserName!.name"/>
+-->
+
+
+
+
+
